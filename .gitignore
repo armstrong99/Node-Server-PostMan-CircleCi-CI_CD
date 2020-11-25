@@ -1,0 +1,5 @@
+node_modules/
+
+# jetbrain IDE files
+.idea/
+.circleci_bk

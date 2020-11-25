@@ -6,5 +6,25 @@ const router = express.Router();
 router.get("/todos", function(req, res) {
   res.json(todos);
 });
+router.get("/users/get", function(req, res) {
+  res.json([
+    {
+    name: "armstrong",
+    age: 20
+  },
+    {
+    name: "elvis",
+    age: 18
+  },
+    {
+    name: "tosin",
+    age: 19
+  },
+
+]);
+});
+router.post("/users/create", function(req, res) {
+  res.json("success").sendStatus(200);
+});
 
 module.exports = router;

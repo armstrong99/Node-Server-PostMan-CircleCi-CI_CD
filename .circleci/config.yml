@@ -4,10 +4,8 @@ orbs:
 workflows:
   heroku_deploy:
     jobs:
-       - heroku/deploy-via-git:
-            auth:
-              HEROKU_APP_NAME: $HEROKU_APP_NAME
-              HEROKU_API_KEY: $HEROKU_API_KEY
+       - heroku/deploy-via-git
+            
 
 
         

@@ -9,6 +9,10 @@ module.exports = [
   },
   {
     id: 3,
+    task: "Buy Groceries"
+  },
+  {
+    id: 4,
     task: "Wash the dishes"
   }
 ];

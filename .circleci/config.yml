@@ -2,20 +2,23 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
   newman: postman/newman@0.0.2
+  jobs:
+    build:
+      executor: newman/postman-newman-docker
+      steps:
+        - checkout
+        - newman/newman-run:
+            collection: ./Users.postman_collection.json
+            environment: ./My-Remote-API-Testing.postman_environment.json
+
 
 workflows:
   heroku_deploy:
      jobs:
-       - build: 
-            executor: newman/postman-newman-docker
-            steps:
-              - checkout
-              - newman/newman-run:
-                  collection: ./Users.postman_collection.json
-                  environment: ./My-Remote-API-Testing.postman_environment.json
        - heroku/deploy-via-git:
-          requires:
-           - build
+            requires:
+              - build
+           
     
             
 

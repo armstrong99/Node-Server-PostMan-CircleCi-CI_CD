@@ -8,6 +8,9 @@ const app = express();
 const port = process.env.PORT || "1337";
 app.set("port", port);
 
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 app.use('/', routes);
 
 // Server

@@ -23,8 +23,14 @@ router.get("/users/get", function(req, res) {
 
 ]);
 });
+
 router.post("/users/create", function(req, res) {
-  res.json("success").sendStatus(200);
+  res.json({
+    success: true,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password,
+  }).sendStatus(200);
 });
 
 module.exports = router;

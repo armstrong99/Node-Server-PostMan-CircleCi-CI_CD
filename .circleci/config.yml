@@ -4,12 +4,13 @@ orbs:
   newman: postman/newman@0.0.2
 jobs:
     build:
+      working_directory: ~/my_app
       executor: newman/postman-newman-docker
       steps:
         - checkout
         - newman/newman-run:
-            collection: ./Users.postman_collection.json
-            environment: ./e2e-test-PostMan-CircleCi.postman_environment.json
+            collection: ~/Users.postman_collection.json
+            environment: ~/e2e-test-PostMan-CircleCi.postman_environment.json
 
 
 workflows:

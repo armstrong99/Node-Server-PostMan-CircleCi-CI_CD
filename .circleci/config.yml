@@ -9,7 +9,7 @@ jobs:
         - checkout
         - newman/newman-run:
             collection: ./Users.postman_collection.json
-            environment: ./My-Remote-API-Testing.postman_environment.json
+            environment: ./e2e-test-PostMan-CircleCi.postman_environment.json
 
 
 workflows:
